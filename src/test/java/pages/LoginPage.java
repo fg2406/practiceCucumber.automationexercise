@@ -7,7 +7,7 @@ import utilities.Driver;
 
 public class LoginPage {
 
-    public WebElement loginYourAccountText;
+  //  public WebElement loginYourAccountText;
 
     public LoginPage() {
 
@@ -15,6 +15,10 @@ public class LoginPage {
     }
 
     //Locators
+
+
+    @FindBy(xpath = "//b[contains (text(),'Enter Account Information')]")
+    public WebElement createAccountPageVerification;
 
     @FindBy(partialLinkText = "Signup")
     public WebElement signupButton;
@@ -25,14 +29,35 @@ public class LoginPage {
     @FindBy(name= "name")
     public WebElement nameBox;
 
-    @FindBy (xpath = "(//*[@name=\"email\"])[2]")
-    public WebElement emailBox;
+    @FindBy(css = "[type=\"password\"]")
+    public WebElement loginPasswordBox;
+
+    @FindBy(css = "[data-qa=\"login-email\"]")
+    public WebElement loginemailElement;
+
+    @FindBy(xpath = "(//h2)[1]")
+    public WebElement loginYourAccountText;
 
     @FindBy(xpath = "(//*[@type= 'submit'])[2]")
     public WebElement accountCreatSignupButton;
 
-    @FindBy(xpath = "//b[contains (text(),'Enter Account Information')]")
-    public WebElement createAccountPageVerification;
+    @FindBy(xpath = "//*[@type='submit']")
+    public WebElement loginButton;
+
+    @FindBy(xpath = "//a[contains(text(),' Logout')]")
+    public WebElement logoutButton;
+
+   /* @FindBy(xpath = "//b[contains (text(),'Enter Account Information')]")
+    public WebElement createAccountPageVerification;  */
+
+    @FindBy(xpath="(//p)[1]")
+    public WebElement existingEmailVerification;
+
+    @FindBy(xpath = "(//p)[1]")   //  //p[contains(text(),'password is incorrect')]
+    public WebElement negativeLoginText;
+
+     @FindBy(xpath = "//*[@id=\"form\"]/div/div/div[1]/div/form/p ")
+    public WebElement incorrectYazisi;
 
 
 }

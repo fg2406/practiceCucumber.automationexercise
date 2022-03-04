@@ -1,11 +1,10 @@
-package stepdefinitios;
+package stepdefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.MainPageFunctionalities;
-import sun.font.SunLayoutEngine;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -41,7 +40,7 @@ public class RegisterUserStepDefs {
     @When("kullanici olarak isim ve maili girer")
     public void kullaniciOlarakIsimVeMailiGirer() {
 
-        mainPageFunctionalities.nameBox.sendKeys("suat");
+        mainPageFunctionalities.nameBox.sendKeys("mehmet");
         mainPageFunctionalities.emailBox.sendKeys(Faker.instance().internet().emailAddress());
 
     }
